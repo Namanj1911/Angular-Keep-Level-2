@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Routes, RouterModule, Router } from '@angular/router';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
+
 export class RouterService {
 
-  constructor() { }
+    constructor(private router: Router) { }
 
-  routeToDashboard() {
+    routeToDashboard() {
+        this.router.navigate(['/dashboard'])
+    }
 
-  }
-
-  routeToLogin() {
-  	
-  }
+    routeToLogin() {
+        this.router.navigate(['/login'])
+    }
 }
